@@ -32,7 +32,7 @@ import MainDiv from '~/components/global/MainDiv.vue'
 
     <div class="relative w-full h-screen flex justify-center items-center z-10">
       <MainDiv>
-        <!-- put the icon here -->
+        <img class="w-[50px]" src="/logo.png" alt="" />
       </MainDiv>
     </div>
   </div>
