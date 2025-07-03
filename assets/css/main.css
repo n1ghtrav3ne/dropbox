@@ -5,4 +5,5 @@
 body
 {
     direction: rtl;
+    overflow: hidden;
 }

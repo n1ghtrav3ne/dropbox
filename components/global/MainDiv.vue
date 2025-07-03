@@ -7,7 +7,7 @@
       بسم الله رحمن رحیم
     </div>
 
-    <h1 class="text-blue-600 text-4xl font-bold w-[75%] row-span-4">
+    <div class="text-blue-600 text-4xl font-bold w-[75%] row-span-4">
       <div>
         شرکت توسعه مثلث آفتاب
       </div>
@@ -15,7 +15,7 @@
       <div>
         معمار موفقیت شما
       </div>
-    </h1>
+    </div>
 
     <div class="row-span-1 flex items-end">
       <slot />
