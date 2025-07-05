@@ -35,7 +35,6 @@ onMounted(() => {
     })
   }
 
-  // Animate centerBox shrinking
   if (centerBox) {
     gsap.fromTo(centerBox, { scale: 1 }, {
       scale: 0.2,
@@ -49,7 +48,6 @@ onMounted(() => {
     })
   }
 
-  // Animate side boxes flying in
   gsap.fromTo(sideBoxes,
       {
         x: (i) => ['200%', '200%', '-200%', '-200%'][i % 4],
@@ -67,12 +65,43 @@ onMounted(() => {
         },
       }
   )
+  gsap.to(verLines, {
+    left: (i) => {
+      const initialLefts = [25.5, 40, 60, 74.3] // your current Tailwind percent positions
+      const shifts = [10, -5, 15, -10] // how much to shift each line (in %)
+      return `${initialLefts[i] + shifts[i]}%`
+    },
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: document.body,
+      start: '50% top',
+      end: 'bottom top',
+      scrub: true,
+    },
+  })
+
+  gsap.to(hoLines, {
+    top: (i) => {
+      const initialTops = [25.5, 40, 60, 74.3] // your current Tailwind percent positions
+      const shifts = [10, -5, 15, -10] // how much to shift each line (in %)
+      return `${initialTops[i] + shifts[i]}%`
+    },
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: document.body,
+      start: '50% top',
+      end: 'bottom top',
+      scrub: true,
+    },
+  })
+
+
 })
 </script>
 
 <template>
-  <div ref="bgContainer" class="grid-bg z-10 relative w-full h-screen flex flex-row p-4 gap-[0.5%] overflow-hidden">
-    <div class="flex w-[30%] flex-col gap-[1%] h-full">
+  <div ref="bgContainer" class="z-10 relative w-full h-screen flex lg:flex-row p-4 gap-[0.5%] overflow-hidden">
+    <div class="flex w-[30%] sm:flex-row lg:flex-col gap-[1%] h-full">
       <TheBox class="the-sideBox !h-[45%] rounded-tr-lg"
               text="Typography"
               back-color="#fa551e"
@@ -108,7 +137,7 @@ onMounted(() => {
     </div>
   </div>
 
-  <!-- Grid overlay -->
+
   <div class="absolute inset-0 pointer-events-none">
     <!-- Vertical lines -->
     <div class="v-line absolute top-0 bottom-0 left-[25.5%] w-px bg-blue-100"></div>

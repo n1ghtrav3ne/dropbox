@@ -52,7 +52,7 @@ onMounted(() => {
       ease: 'none',
       scrollTrigger: {
         trigger: document.body,
-        start: '60% top',
+        start: '50% top',
         end: '100% top',
         scrub: true,
       },
@@ -68,7 +68,7 @@ onMounted(() => {
     ease: 'none',
     scrollTrigger: {
       trigger: document.body,
-      start: '0% top',
+      start: '20% top',
       end: '100% top',
       scrub: true,
     },
