@@ -52,7 +52,7 @@ onMounted(() => {
       ease: 'none',
       scrollTrigger: {
         trigger: document.body,
-        start: '50% top',
+        start: '40% top',
         end: '100% top',
         scrub: true,
       },
@@ -61,8 +61,8 @@ onMounted(() => {
 
   // Animate side boxes (same scroll range)
   gsap.from(sideBoxes, {
-    x: (i) => ['200%', '-20%', '-200%', '10%'][i % 4],
-    y: (i) => ['-10%', '-200%', '10%', '200%'][i % 4],
+    x: (i) => ['200%', '-200%', '-200%', '10%'][i % 4],
+    y: (i) => ['-10%', '-200%', '10%', '250%'][i % 4],
     scale: 1,
     stagger: 0,
     ease: 'none',
@@ -91,20 +91,23 @@ onMounted(() => {
       <PhQuotes :size="100" weight="bold" color="#684505" />
     </TheBox>
 
+    <!-- this is the center box of the page -->
     <div
         ref="centerBox"
-        class="center-box origin-center grid grid-rows-6 absolute top-[2.5%] right-0 left-0 m-auto
-         p-4 w-[80%] h-[95%] bg-white
+        class="center-box origin-center z-50 grid grid-rows-6 absolute top-[2.5%] right-0 left-0 m-auto
+         p-4 w-[80%] h-[95%] bg-white border-blue-100
          transition-colors duration-1000"
     >
 
-    <div v-if="showText" class="text-center font-bold text-2xl row-span-1">
+    <div class="text-center font-bold text-2xl row-span-1 transition-opacity duration-700"
+         :class="{ 'opacity-100': showText, 'opacity-0': !showText }"
+    >
         بسم الله رحمن رحیم
       </div>
 
-      <div v-if="showText"
-           class="text-4xl font-bold w-[75%] row-span-4"
-           :class="[textWhite?'text-white':'text-blue-600 ']">
+      <div class="text-4xl font-bold w-[75%] row-span-4 transition-opacity duration-700"
+           :class="[textWhite ? 'text-white' : 'text-blue-600', showText ? 'opacity-100' : 'opacity-0']"
+           >
         <div>
           شرکت توسعه مثلث آفتاب
         </div>

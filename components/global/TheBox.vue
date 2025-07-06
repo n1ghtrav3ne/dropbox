@@ -8,11 +8,11 @@ const prop = defineProps({
 
 <template>
   <div
-      class="flex flex-col justify-between p-[23px] w-full h-full"
+      class="flex flex-col justify-between p-2 lg:p-[23px] w-full h-full"
       :style="{ backgroundColor: backColor }"
   >
     <span
-        class="text-4xl text-left font-semibold"
+        class="text-xl lg:text-4xl text-left font-semibold"
         :style="{ color: textColor }"
     >
       {{ text }}

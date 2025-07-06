@@ -36,7 +36,7 @@ onMounted(() => {
   }
 
   if (centerBox) {
-    gsap.fromTo(centerBox, { scale: 1 }, {
+    gsap.fromTo(centerBox, {  }, {
       scale: 0.2,
       ease: 'none',
       scrollTrigger: {
@@ -50,7 +50,7 @@ onMounted(() => {
 
   gsap.fromTo(sideBoxes,
       {
-        x: (i) => ['200%', '200%', '-200%', '-200%'][i % 4],
+        x: (i) => ['200%', '300%', '-250%', '-200%'][i % 4],
         y: (i) => ['-200%', '200%', '-200%', '200%'][i % 4],
       },
       {
@@ -68,7 +68,7 @@ onMounted(() => {
   gsap.to(verLines, {
     left: (i) => {
       const initialLefts = [25.5, 40, 60, 74.3] // your current Tailwind percent positions
-      const shifts = [10, -5, 15, -10] // how much to shift each line (in %)
+      const shifts = [20, 5, -5, -20] // how much to shift each line (in %)
       return `${initialLefts[i] + shifts[i]}%`
     },
     ease: 'power2.out',
@@ -82,8 +82,8 @@ onMounted(() => {
 
   gsap.to(hoLines, {
     top: (i) => {
-      const initialTops = [25.5, 40, 60, 74.3] // your current Tailwind percent positions
-      const shifts = [10, -5, 15, -10] // how much to shift each line (in %)
+      const initialTops = [25.5, 40, 60, 74.3] // current Tailwind percent positions
+      const shifts = [20, 3, -3, -20] // how much to shift each line (in %)
       return `${initialTops[i] + shifts[i]}%`
     },
     ease: 'power2.out',
@@ -100,16 +100,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="bgContainer" class="z-10 relative w-full h-screen flex lg:flex-row p-4 gap-[0.5%] overflow-hidden">
-    <div class="flex w-[30%] sm:flex-row lg:flex-col gap-[1%] h-full">
-      <TheBox class="the-sideBox !h-[45%] rounded-tr-lg"
+  <div ref="bgContainer" class="z-10 relative w-full h-screen grid grid-rows-4 lg:!flex lg:flex-row p-1 lg:p-4 gap-[0.5%] overflow-hidden">
+    <div class="flex w-full lg:!w-[30%] flex-row lg:!flex-col gap-[1%] h-full row-span-1">
+      <TheBox class="the-sideBox h-full lg:!h-[45%] rounded-tr-lg"
               text="Typography"
               back-color="#fa551e"
               text-color="#4e0119">
         <PhTextAa :size="100" weight="bold" color="#4e0119" />
       </TheBox>
 
-      <TheBox class="the-sideBox !h-[55%] rounded-br-lg"
+      <TheBox class="the-sideBox h-full lg:!h-[55%] sm:!rounded-tl-lg lg:!rounded-br-lg"
               text="Motion"
               back-color="#c8aff0"
               text-color="#682760">
@@ -118,17 +118,17 @@ onMounted(() => {
     </div>
 
 
-    <CenterContainer ref="centerRef" />
+    <CenterContainer class="row-span-2" ref="centerRef" />
 
-    <div class="flex flex-col w-[30%] gap-[1%] h-full">
-      <TheBox class="the-sideBox !h-[55%] rounded-tl-lg"
+    <div class="flex flex-row lg:!flex-col w-full lg:!w-[30%] gap-[1%] h-full row-span-2">
+      <TheBox class="the-sideBox h-full lg:!h-[55%] rounded-br-lg lg:rounded-tl-lg"
               text="Framework"
               back-color="#283750"
               text-color="#b4c8e1">
         <PhLineSegment :size="100" weight="thin" color="#b4c8e1" />
       </TheBox>
 
-      <TheBox class="the-sideBox !h-[45%] rounded-bl-lg"
+      <TheBox class="the-sideBox h-full lg:!h-[45%] rounded-bl-lg"
               text="Iconography"
               back-color="#b4dc19"
               text-color="#175641">
