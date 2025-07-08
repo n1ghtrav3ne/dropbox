@@ -103,14 +103,14 @@ onMounted(() => {
   <div ref="bgContainer" class="z-10 relative w-full h-screen grid grid-rows-4 lg:!flex lg:flex-row p-1 lg:p-4 gap-[0.5%] overflow-hidden">
     <div class="flex w-full lg:!w-[30%] flex-row lg:!flex-col gap-[1%] h-full row-span-1">
       <TheBox class="the-sideBox h-full lg:!h-[45%] rounded-tr-lg"
-              text="Typography"
+              text="استارت اپ استودیو"
               back-color="#fa551e"
               text-color="#4e0119">
         <PhTextAa :size="100" weight="bold" color="#4e0119" />
       </TheBox>
 
       <TheBox class="the-sideBox h-full lg:!h-[55%] sm:!rounded-tl-lg lg:!rounded-br-lg"
-              text="Motion"
+              text="استارت اپ استودیو"
               back-color="#c8aff0"
               text-color="#682760">
         <PhLineSegments :size="100" weight="thin" color="#682760" />
@@ -122,14 +122,14 @@ onMounted(() => {
 
     <div class="flex flex-row lg:!flex-col w-full lg:!w-[30%] gap-[1%] h-full row-span-2">
       <TheBox class="the-sideBox h-full lg:!h-[55%] rounded-br-lg lg:rounded-tl-lg"
-              text="Framework"
+              text="استارت اپ استودیو"
               back-color="#283750"
               text-color="#b4c8e1">
         <PhLineSegment :size="100" weight="thin" color="#b4c8e1" />
       </TheBox>
 
       <TheBox class="the-sideBox h-full lg:!h-[45%] rounded-bl-lg"
-              text="Iconography"
+              text="استارت اپ استودیو"
               back-color="#b4dc19"
               text-color="#175641">
         <PhLock class="mr-auto" :size="100" weight="bold" color="#175641" />

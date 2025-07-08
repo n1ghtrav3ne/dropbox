@@ -79,13 +79,13 @@ onMounted(() => {
 <template>
   <div class="relative w-full h-full">
     <TheBox class="the-box absolute !w-[44%] !h-[56%]"
-            text="Logo"
+            text="استارت اپ استودیو"
             back-color="#3dd3ee"
             text-color="#055463">
       <PhDropboxLogo :size="100" />
     </TheBox>
     <TheBox class="the-box absolute right-[45%] !w-[55%] !h-[42%]"
-            text="Voice & Tone"
+            text="استارت اپ استودیو"
             back-color="#fad24b"
             text-color="#684505">
       <PhQuotes :size="100" weight="bold" color="#684505" />
@@ -124,13 +124,13 @@ onMounted(() => {
 
 
     <TheBox class="the-box absolute top-[43%] right-[56%] !w-[44%] !h-[57%]"
-            text="Imagery"
+            text="استارت اپ استودیو"
             back-color="#ff8c19"
             text-color="#6d2e09">
       <PhSquareLogo :size="100" color="#6d2e09" />
     </TheBox>
     <TheBox class="the-box absolute top-[57%] !w-[55%] !h-[43%]"
-            text="Color"
+            text="استارت اپ استودیو"
             back-color="#892055"
             text-color="#ffafa5">
       <PhImage :size="180" color="#ffafa5" />
