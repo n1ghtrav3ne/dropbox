@@ -113,7 +113,7 @@ onMounted(() => {
               text="استارت اپ استودیو"
               back-color="#c8aff0"
               text-color="#682760">
-        <PhLineSegments :size="100" weight="thin" color="#682760" />
+        <PhLineSegments :size="99" weight="thin" color="#682760" />
       </TheBox>
     </div>
 
