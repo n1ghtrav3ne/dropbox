@@ -19,11 +19,9 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 
 // Register GSAP plugin
-gsap.registerPlugin(ScrollTrigger)
+const {$gsap:gsap}=useNuxtApp();
 
 const container = ref()
 const mainBox = ref()

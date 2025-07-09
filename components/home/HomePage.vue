@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 import {
   PhLineSegment,
   PhLineSegments,
@@ -9,11 +7,11 @@ import {
   PhTextAa
 } from "@phosphor-icons/vue"
 
-gsap.registerPlugin(ScrollTrigger)
-
 const centerRef = ref()
 const showText = ref(true)
 const bgContainer = ref<HTMLElement | null>(null)
+
+const {$gsap:gsap}=useNuxtApp();
 
 onMounted(() => {
   const centerBox = centerRef.value?.centerBox

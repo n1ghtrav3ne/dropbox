@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 import {PhDropboxLogo, PhImage, PhQuotes, PhSquareLogo} from "@phosphor-icons/vue";
 
-gsap.registerPlugin(ScrollTrigger)
+const {$gsap:gsap}=useNuxtApp();
 
 const centerBox = ref<HTMLElement | null>(null)
 defineExpose({ centerBox })
@@ -73,7 +71,8 @@ onMounted(() => {
       scrub: true,
     },
   })
-})</script>
+});
+</script>
 
 
 <template>
